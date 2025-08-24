@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign Results - Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="results-page">
+  <div class="container">
+    <div class="card fade-in">
+      <h1 class="title">📊 Campaign Strategy Results</h1>
+      <p class="subtitle">Here’s your campaign summary</p>
+
+      <!-- Summary Cards -->
+      <div class="grid">
+        <div class="card small">
+          <h3>Campaign</h3>
+          <p>{{ campaign_name }}</p>
+        </div>
+        <div class="card small">
+          <h3>Budget</h3>
+          <p>${{ budget }}</p>
+        </div>
+        <div class="card small">
+          <h3>Audience</h3>
+          <p>{{ target_audience }}</p>
+        </div>
+        <div class="card small">
+          <h3>Duration</h3>
+          <p>{{ duration }} days</p>
+        </div>
+      </div>
+
+      <!-- Recommendations Table -->
+      <h2 class="subtitle">📌 Recommended Channels</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th>Budget Allocation ($)</th>
+            <th>Expected Reach</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for rec in recommendations %}
+          <tr>
+            <td>{{ rec.channel }}</td>
+            <td>${{ rec.allocated_budget }}</td>
+            <td>{{ rec.estimated_impressions }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!-- Action Button -->
+      <div class="actions">
+        <a href="{{ url_for('home') }}" class="btn">🔄 Start New Campaign</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

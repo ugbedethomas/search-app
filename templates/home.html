@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Campaign Builder - Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="home-page">
+  <div class="container">
+    <div class="card fade-in">
+      <h1 class="title">🚀 Build Your Campaign</h1>
+      <p class="subtitle">Client Demo Style – Premium Look</p>
+      
+      <form method="POST">
+        <label>Campaign Name</label>
+        <input type="text" name="campaign_name" placeholder="e.g., Summer Promo" required>
+
+        <label>Budget ($)</label>
+        <input type="number" name="budget" placeholder="1000" required>
+
+        <label>Target Audience</label>
+        <input type="text" name="target_audience" placeholder="e.g., Young Professionals" required>
+
+        <label>Duration (days)</label>
+        <input type="number" name="duration" placeholder="30" required>
+
+        <button type="submit" class="btn">Generate Strategy</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

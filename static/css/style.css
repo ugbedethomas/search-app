@@ -1,0 +1,157 @@
+/* ===== Global Page & Container Styling ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+    background: #f5f7fa;
+}
+
+/* ===== Page-specific body classes ===== */
+body.home-page {
+    background: linear-gradient(135deg, #eef2f7, #d9e2ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.results-page {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ===== Card Styling ===== */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+/* ===== Grid for Summary Cards ===== */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card.small {
+    flex: 1 1 220px;
+    text-align: center;
+}
+
+/* ===== Titles & Subtitles ===== */
+.title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* ===== Form Styling (Home Page) ===== */
+body.home-page .card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+body.home-page input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* ===== Table Styling (Results Page) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table thead {
+    background: #3498db;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 0.95rem;
+}
+
+table tbody tr:hover {
+    background: #f1f6f9;
+}
+
+/* ===== Fade-in Animation ===== */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+    }
+    table th, table td {
+        font-size: 0.9rem;
+    }
+    .card.small {
+        flex: 1 1 100%;
+    }
+}
